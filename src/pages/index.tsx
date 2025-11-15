@@ -187,8 +187,8 @@ export default function Home() {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
-                  size="icon-sm"
-                  className="relative border-dashed hover:border-solid transition-all duration-300"
+                  size="sm"
+                  className="relative border-dashed hover:border-solid transition-all duration-300 h-8 w-8 p-0"
                 >
                   <RiFilterLine className="h-3.5 w-3.5" />
                   {selectedType !== "all" && (
@@ -224,9 +224,9 @@ export default function Home() {
 
             <Button
               variant="outline"
-              size="icon-sm"
+              size="sm"
               onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
-              className="relative group border-dashed hover:border-solid transition-all duration-300"
+              className="relative group border-dashed hover:border-solid transition-all duration-300 h-8 w-8 p-0"
             >
               <motion.div
                 key={sortOrder}
@@ -244,10 +244,10 @@ export default function Home() {
 
             <Button
               variant="outline"
-              size="icon-sm"
+              size="sm"
               onClick={() => setTrashMode(!trashMode)}
               className={cn(
-                "relative group border-dashed hover:border-solid transition-all duration-300",
+                "relative group border-dashed hover:border-solid transition-all duration-300 h-8 w-8 p-0",
                 trashMode &&
                   "bg-destructive/5 hover:bg-destructive/10 text-destructive border-destructive",
               )}
@@ -497,12 +497,12 @@ export default function Home() {
                         <div className="flex items-center gap-1">
                           <Button
                             variant="outline"
-                            size="icon-xs"
+                            size="sm"
                             onClick={() =>
                               setCurrentPage((prev) => Math.max(1, prev - 1))
                             }
                             disabled={currentPage === 1}
-                            className="h-6 w-6 border-dashed hover:border-solid transition-all duration-300"
+                            className="h-6 w-6 p-0 border-dashed hover:border-solid transition-all duration-300"
                           >
                             <RiArrowLeftSLine className="h-3 w-3" />
                           </Button>
@@ -511,7 +511,7 @@ export default function Home() {
                           </span>
                           <Button
                             variant="outline"
-                            size="icon-xs"
+                            size="sm"
                             onClick={() =>
                               setCurrentPage((prev) =>
                                 Math.min(paginationData.totalPages, prev + 1),

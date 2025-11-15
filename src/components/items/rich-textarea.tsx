@@ -35,25 +35,23 @@ export default function RichTextarea({
         <div className={`flex-grow`} />
         <Button
           variant={`outline`}
-          size={`icon-sm`}
+          size={`sm`}
           className={cn(
-            `mr-1 text-muted-foreground transition hover:text-primary`,
+            `mr-1 text-muted-foreground transition hover:text-primary h-8 w-8 p-0`,
             disableCopyAction && `hidden`,
           )}
           onClick={() => copy(displayValue)}
-          tapEnabled
         >
           <RiFileCopyLine className={`w-3.5 h-3.5`} />
         </Button>
         <Button
           variant={`outline`}
-          size={`icon-sm`}
+          size={`sm`}
           onClick={() => save(saveFileName || "text.txt", displayValue)}
           className={cn(
-            `text-muted-foreground transition hover:text-primary`,
+            `text-muted-foreground transition hover:text-primary h-8 w-8 p-0`,
             disableSaveAction && `hidden`,
           )}
-          tapEnabled
         >
           <RiDownloadLine className={`w-3.5 h-3.5`} />
         </Button>

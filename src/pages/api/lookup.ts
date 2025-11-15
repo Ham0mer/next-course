@@ -1,13 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { lookupWhoisWithCache } from "@/lib/whois/lookup";
-import { WhoisAnalyzeResult } from "@/lib/whois/types";
+import { lookupXuexitongWithCache } from "@/lib/xuexitong/client";
+import { CourseRecord } from "@/lib/xuexitong/types";
 
 type Data = {
   status: boolean;
   time: number;
   cached?: boolean;
-  source?: "rdap" | "whois";
-  result?: WhoisAnalyzeResult;
+  username?: string;
+  totalCourses?: number;
+  completedCourses?: number;
+  inProgressCourses?: number;
+  data?: CourseRecord[];
   error?: string;
 };
 
@@ -20,14 +23,27 @@ export default async function handler(
   if (!query || typeof query !== "string" || query.length === 0) {
     return res
       .status(400)
-      .json({ time: -1, status: false, error: "Query is required" });
+      .json({ time: -1, status: false, error: "用户名不能为空" });
   }
 
-  const { time, status, result, error, cached, source } =
-    await lookupWhoisWithCache(query);
-  if (!status) {
-    return res.status(500).json({ time, status, error });
+  const result = await lookupXuexitongWithCache(query);
+  
+  if (!result.status) {
+    return res.status(500).json({ 
+      time: result.time, 
+      status: false, 
+      error: result.error 
+    });
   }
 
-  return res.status(200).json({ time, status, result, cached, source });
+  return res.status(200).json({
+    time: result.time,
+    status: true,
+    cached: result.cached,
+    username: result.username,
+    totalCourses: result.totalCourses,
+    completedCourses: result.completedCourses,
+    inProgressCourses: result.inProgressCourses,
+    data: result.data,
+  });
 }

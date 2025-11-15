@@ -147,6 +147,28 @@ textarea::-webkit-scrollbar {
   display: none;
 }
 
+/* 隐藏页面滚动条但保留滚动功能 */
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* 全局隐藏所有滚动条 */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
 .grow {
   flex-grow: 1;
 }

@@ -105,11 +105,8 @@ export default function Home() {
 
   const getTypeColor = useCallback((type: string) => {
     const colorMap = {
-      domain: "text-blue-500",
-      ipv4: "text-green-500",
-      ipv6: "text-purple-500",
-      asn: "text-orange-500",
-      cidr: "text-pink-500",
+      username: "text-blue-500",
+      phone: "text-green-500",
     } as const;
     return colorMap[type as keyof typeof colorMap] || "text-gray-500";
   }, []);
@@ -151,8 +148,11 @@ export default function Home() {
           className="text-center mb-6"
         >
           <h1 className="text-lg md:text-xl lg:text-2xl font-thin select-none mb-2 bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
-            {t("title")}
+            进度查询
           </h1>
+          <p className="text-sm text-muted-foreground">
+            输入手机号或用户名查询进度记录
+          </p>
         </motion.div>
 
         <motion.div
@@ -212,20 +212,11 @@ export default function Home() {
                   <DropdownMenuRadioItem value="all" className="text-xs">
                     {t("all_types")}
                   </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="domain" className="text-xs">
-                    {t("domain_only")}
+                  <DropdownMenuRadioItem value="username" className="text-xs">
+                    用户名
                   </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="ipv4" className="text-xs">
-                    {t("ipv4_only")}
-                  </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="ipv6" className="text-xs">
-                    {t("ipv6_only")}
-                  </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="asn" className="text-xs">
-                    {t("asn_only")}
-                  </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="cidr" className="text-xs">
-                    {t("cidr_only")}
+                  <DropdownMenuRadioItem value="phone" className="text-xs">
+                    手机号
                   </DropdownMenuRadioItem>
                 </DropdownMenuRadioGroup>
               </DropdownMenuContent>

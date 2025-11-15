@@ -11,15 +11,15 @@ import { Navbar } from "@/components/navbar";
 
 const siteTitle = strEnv(
   "NEXT_PUBLIC_SITE_TITLE",
-  "Next Whois - Easily Lookup Whois Information",
+  "网课查询平台 - 综合网课课程信息查询",
 );
 const siteDescription = strEnv(
   "NEXT_PUBLIC_SITE_DESCRIPTION",
-  "🧪 Your Next Generation Of Whois Lookup Tool With Modern UI. Support Domain/IPv4/IPv6/ASN/CIDR Whois Lookup And Powerful Features.",
+  "🎓 便捷的网课课程查询工具，支持手机号和用户名查询，查看课程进度、完成状态等详细信息。",
 );
 const siteKeywords = strEnv(
   "NEXT_PUBLIC_SITE_KEYWORDS",
-  "Whois, Lookup, Tool, Next Whois",
+  "网课查询, 课程查询, 学习进度, 在线教育, 学习通",
 );
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -41,8 +41,8 @@ export default function App({ Component, pageProps }: AppProps) {
       >
         <PWAInstaller
           manifest-url="/manifest.json"
-          name="Next Whois"
-          description="🧪 Your Next Generation Of Whois Lookup Tool With Modern UI. Support Domain/IPv4/IPv6/ASN/CIDR Whois Lookup And Powerful Features."
+          name="网课课程查询"
+          description="🎓 便捷的网课课程查询工具，支持手机号和用户名查询，查看课程进度、完成状态等详细信息。"
         />
         <div className="fixed inset-0 -z-10">
           <div className="absolute inset-0 bg-dot-pattern opacity-10" />

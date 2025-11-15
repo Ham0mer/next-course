@@ -1,7 +1,7 @@
 {
-  "name": "Next Whois",
-  "short_name": "Next Whois",
-  "description": "🧪 Your Next Generation Of Whois Lookup Tool With Modern UI.",
+  "name": "网课查询平台",
+  "short_name": "网课查询",
+  "description": "🎓 综合网课课程进度查询平台",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

@@ -2,9 +2,7 @@ import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import React from "react";
 import { toast } from "sonner";
-import { getDomain } from "tldjs";
 import { ParsedUrlQuery } from "node:querystring";
-import { getSpecialDomain } from "@/lib/whois/lib";
 import { useTranslation } from "@/lib/i18n";
 
 export function cn(...inputs: ClassValue[]) {
@@ -136,38 +134,6 @@ export function toErrorMessage(e: any): string {
 export function countDuration(startTime: number, _endTime?: number): number {
   const endTime = _endTime ?? Date.now();
   return (endTime - startTime) / 1000; // seconds
-}
-
-export function extractDomain(url: string): string | null {
-  try {
-    return getDomain(getSpecialDomain(url));
-  } catch {
-    return null;
-  }
-}
-
-export function cleanDomain(domain: string): string {
-  const hostname = extractDomain(domain);
-  if (hostname) {
-    return hostname;
-  }
-
-  // if contains ip, extract it and return
-  const ipMatch = domain.match(
-    /^(https?:\/\/)?((\d{1,3}\.){3}\d{1,3})(:\d+)?(\/.*)?$/,
-  );
-  if (ipMatch) {
-    return ipMatch[2];
-  }
-
-  return domain;
-}
-
-export function cleanDomainQuery(query: ParsedUrlQuery): string {
-  const domain =
-    (query.query as string | string[] | undefined)?.toString() ?? "";
-
-  return cleanDomain(domain);
 }
 
 export function getWindowHref(): string {

@@ -3,20 +3,14 @@ import { HISTORY_LIMIT } from "@/lib/env";
 export type HistoryItem = {
   query: string;
   timestamp: number;
-  queryType: "domain" | "ipv4" | "ipv6" | "asn" | "cidr";
+  queryType: "username" | "phone";
 };
 
 export function detectQueryType(query: string): HistoryItem["queryType"] {
-  // IPv4 pattern
-  if (/^(\d{1,3}\.){3}\d{1,3}$/.test(query)) return "ipv4";
-  // IPv6 pattern
-  if (/^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/.test(query)) return "ipv6";
-  // ASN pattern
-  if (/^(AS|as)\d+$/.test(query)) return "asn";
-  // CIDR pattern
-  if (/^(\d{1,3}\.){3}\d{1,3}\/\d{1,2}$/.test(query)) return "cidr";
-  // Default to domain
-  return "domain";
+  // 手机号格式
+  if (/^1[3-9]\d{9}$/.test(query)) return "phone";
+  // 默认为用户名
+  return "username";
 }
 
 // Helper function to check if localStorage is available

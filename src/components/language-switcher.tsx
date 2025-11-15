@@ -9,14 +9,8 @@ import {
 import { RiEarthFill } from "@remixicon/react";
 
 const languageNames = {
-  en: "English",
   zh: "简体中文",
   "zh-tw": "繁體中文",
-  de: "Deutsch",
-  ru: "Русский",
-  ja: "日本語",
-  fr: "Français",
-  ko: "한국어",
 } as const;
 
 export function LanguageSwitcher() {

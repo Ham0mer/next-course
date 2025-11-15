@@ -1,6 +1,6 @@
 {
-  "name": "next-whois-ui",
-  "version": "1.0.0",
+  "name": "next-course-query-ui",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
@@ -13,12 +13,13 @@
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.6.1",
     "@khmyznikov/pwa-install": "^0.4.4",
+    "@radix-ui/react-alert-dialog": "^1.1.15",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-dropdown-menu": "^2.1.1",
     "@radix-ui/react-popover": "^1.1.14",
     "@radix-ui/react-scroll-area": "^1.1.0",
     "@radix-ui/react-separator": "^1.1.0",
-    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-slot": "^1.2.3",
     "@remixicon/react": "^4.6.0",
     "@tremor/react": "^3.18.7",
     "@types/negotiator": "^0.6.4",
@@ -38,7 +39,6 @@
     "next-i18next": "^15.3.1",
     "next-pwa": "^5.6.0",
     "next-themes": "^0.3.0",
-    "node-rdap": "^0.5.0",
     "prettier": "^3.3.3",
     "react": "^18",
     "react-dom": "^18",
@@ -46,15 +46,12 @@
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "tldjs": "^2.3.1",
-    "vaul": "^0.9.1",
-    "whois-raw": "^0.1.10"
+    "vaul": "^0.9.1"
   },
   "devDependencies": {
     "@types/node": "^20.19.8",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/tldjs": "^2.3.4",
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",

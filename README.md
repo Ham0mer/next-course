@@ -1,172 +1,133 @@
 <div align="center">
 
-<img src="/public/icons/icon-512x512.png" alt="Next Whois" width="64" height="64">
+<img src="/public/icons/icon-512x512.png" alt="Course Query Platform" width="64" height="64">
 
-# 🧪 Next Whois
-😎 Lightweight & Beautiful Whois Query Tool
+# 🎓 网课查询平台
+🔍 综合网课课程信息查询系统
 
-[English](/README.md) · [简体中文](/docs/README_CN.md) · [繁體中文](/docs/README_TW.md) · [Русский](/docs/README_RU.md) · [日本語](/docs/README_JP.md) · [Deutsch](/docs/README_DE.md) · [Français](/docs/README_FR.md) · [한국어](/docs/README_KR.md)
+[English](/README.md) · [简体中文](/docs/README_CN.md)
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/zmh-program/next-whois-ui)
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zmh-program/next-whois-ui)
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/Ham0mer/next-whois)
 
 </div>
 
-## 😎 Features
-No need to say more, just try it out! 🥳
+## 😎 功能特性
 
-1. ✨ **Pretty UI**: Modern design with [Shadcn UI](https://ui.shadcn.com), make you feel comfortable.
-2. 📱 **Responsive**: Works well on Mobile✅ / Tablet✅ / Desktop✅, PWA App Support.
-3. 🌈 **Multi Theme**: Multi theme support (*Light & Dark*), system theme detection, switch theme as you like.
-4. 🚀 **Flexible Query**: Powered by Next.js, support serverless deployment and fast query.
-5. 📚 **Record History**: History records are stored in local storage, easy to view and query history.
-6. 📡 **Open API**: Simple API for whois query, easy to integrate with other services.
-7. 🌍 **IPv4 & IPv6 Whois**: Support IPv4, IPv6, Domain, ASN, CIDR whois query.
-8. 📦 **Result Capture**: Capture whois result, easy to share and save.
-9. 📡 **Result Caching**: Redis-based Whois caching for faster queries.
-10. 🌍 **Internationalization**: Multi-language support
-11. 🚀 **RDAP Support**: Modern RDAP protocol support with automatic fallback to WHOIS
+1. ✨ **现代 UI**: 基于 [Shadcn UI](https://ui.shadcn.com) 的现代化设计，使用体验极佳
+2. 📱 **响应式**: 完美支持 移动端✅ / 平板✅ / 桌面✅，支持 PWA 应用
+3. 🌈 **多主题**: 支持亮色/暗色主题，系统主题检测，随心切换
+4. 🚀 **快速查询**: 基于 Next.js，支持无服务器部署和快速查询
+5. 📚 **历史记录**: 历史记录本地存储，方便查看和查询历史
+6. � **智能搜索**: 支持手机号和用户名查询
+7. � **数据统计**: 自动统计总课程数、已完成、进行中等信息
+8. 📡 **结果缓存**: 基于 Redis 的缓存机制，提升查询速度
+9. 🌍 **国际化**: 多语言支持
 
-👉 [Contribute](https://github.com/zmh-program/next-whois-ui/pulls)
+👉 [贡献代码](https://github.com/Ham0mer/next-whois/pulls)
 
-## Deploy
-#### `1` 🚀 Platforms (Recommended)
-[Vercel](https://vercel.com/import/project?template=https://github.com/zmh-program/next-whois-ui) / [Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/zmh-program/next-whois-ui) / [Zeabur](https://zeabur.com/templates/UHCCCT)
+## 部署
+#### `1` 🚀 平台部署（推荐）
+[Vercel](https://vercel.com/import/project?template=https://github.com/Ham0mer/next-whois) / [Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/Ham0mer/next-whois)
+
 #### `2` 🐳 Docker
 ```bash
-docker run -d -p 3000:3000 programzmh/next-whois-ui
+docker run -d -p 3000:3000 your-image-name
 ```
 
-#### `3` 🔨 Source Code
+#### `3` 🔨 源码部署
 ```bash
-git clone https://github.com/zmh-program/next-whois-ui
-cd next-whois-ui
+git clone https://github.com/Ham0mer/next-whois
+cd next-whois
 
 npm install -g pnpm
 pnpm install
 pnpm dev
 ```
 
-## 📏 Envs
+## 📏 环境变量
 
 ### SEO
-- `NEXT_PUBLIC_SITE_TITLE`: Site Title
-- `NEXT_PUBLIC_SITE_DESCRIPTION`: Site Description
-- `NEXT_PUBLIC_SITE_KEYWORDS`: Site Keywords
+- `NEXT_PUBLIC_SITE_TITLE`: 网站标题
+- `NEXT_PUBLIC_SITE_DESCRIPTION`: 网站描述
+- `NEXT_PUBLIC_SITE_KEYWORDS`: 网站关键词
 
-### WHOIS
-- `NEXT_PUBLIC_HISTORY_LIMIT`: History Limit (Default: -1)
-- `NEXT_PUBLIC_MAX_WHOIS_FOLLOW`: Max Domain Whois Follow (Default: 0)
-- `NEXT_PUBLIC_MAX_IP_WHOIS_FOLLOW`: Max IP Whois Follow (Default: 5)
+### 历史记录
+- `NEXT_PUBLIC_HISTORY_LIMIT`: 历史记录限制 (默认: -1, 无限制)
 
-### MOZ API
-- `MOZ_ACCESS_ID`: Moz API Access ID (Required for domain metrics)
-- `MOZ_SECRET_KEY`: Moz API Secret Key (Required for domain metrics)
+### 缓存
+- `REDIS_HOST`: Redis 主机 (为空时禁用缓存)
+- `REDIS_PORT`: Redis 端口 (默认: 6379)
+- `REDIS_PASSWORD`: Redis 密码 (可选)
+- `REDIS_DB`: Redis 数据库 (默认: 0)
+- `REDIS_CACHE_TTL`: Redis 缓存过期时间(秒) (默认: 3600)
 
-### CACHE
-- `REDIS_HOST`: Redis Host (CACHE DISABLED WHEN EMPTY)
-- `REDIS_PORT`: Redis Port (Default: 6379)
-- `REDIS_PASSWORD`: Redis Password (OPTIONAL)
-- `REDIS_DB`: Redis DB (Default: 0)
-- `REDIS_CACHE_TTL`: Redis Cache TTL Secs (Default: 3600)
-
-## 📝 API Reference
-`GET` `/api/lookup?query=google.com`
+## 📝 API 接口
+`GET` `/api/lookup?query=xxxxx`
 
 <details>
-<summary><strong>Response</strong> OK (200)</summary>
+<summary><strong>成功响应</strong> OK (200)</summary>
 
 ```json
 {
-  "time": 1.547,
   "status": true,
+  "time": 1.234,
   "cached": false,
-  "source": "rdap",
-  "result": {
-    "domain": "GOOGLE.COM",
-    "registrar": "MarkMonitor Inc.",
-    "registrarURL": "http://www.markmonitor.com",
-    "ianaId": "292",
-    "whoisServer": "whois.markmonitor.com",
-    "updatedDate": "2019-09-09T15:39:04.000Z",
-    "creationDate": "1997-09-15T04:00:00.000Z",
-    "expirationDate": "2028-09-14T04:00:00.000Z",
-    "status": [
-      {
-        "status": "clientDeleteProhibited",
-        "url": "https://icann.org/epp#clientDeleteProhibited"
-      },
-      {
-        "status": "clientTransferProhibited",
-        "url": "https://icann.org/epp#clientTransferProhibited"
-      },
-      {
-        "status": "clientUpdateProhibited",
-        "url": "https://icann.org/epp#clientUpdateProhibited"
-      },
-      {
-        "status": "serverDeleteProhibited",
-        "url": "https://icann.org/epp#serverDeleteProhibited"
-      },
-      {
-        "status": "serverTransferProhibited",
-        "url": "https://icann.org/epp#serverTransferProhibited"
-      },
-      {
-        "status": "serverUpdateProhibited",
-        "url": "https://icann.org/epp#serverUpdateProhibited"
-      }
-    ],
-    "nameServers": [
-      "NS1.GOOGLE.COM",
-      "NS2.GOOGLE.COM",
-      "NS3.GOOGLE.COM",
-      "NS4.GOOGLE.COM"
-    ],
-    "registrantOrganization": "Unknown",
-    "registrantProvince": "Unknown",
-    "registrantCountry": "Unknown",
-    "registrantPhone": "+1 2086851750",
-    "registrantEmail": "Unknown",
-    "rawWhoisContent": "...",
-    "rawRdapContent": "..."
-  }
+  "username": "xxxxx",
+  "totalCourses": 4,
+  "completedCourses": 4,
+  "inProgressCourses": 0,
+  "data": [
+    {
+      "id": "518577",
+      "ptname": "图图_学习通（全包）",
+      "school": "自动识别无需填写",
+      "name": "",
+      "user": "xxxxx",
+      "kcname": "药理学专业英语",
+      "addtime": "2025-11-01 19:46:03",
+      "status": "已完成",
+      "process": "100%",
+      "remarks": "不允许学生查看成绩"
+    }
+  ]
 }
 ```
 </details>
 
 <details>
-<summary><strong>Error Response</strong> Internal Server Error (500)</summary>
+<summary><strong>失败响应</strong> Internal Server Error (500)</summary>
 
 ```json
 {
-  "time": 0.609,
   "status": false,
-  "error": "No match for domain google.notfound (e.g. domain is not registered)"
+  "time": 0.456,
+  "error": "查询失败"
 }
 ```
 </details>
 
 <details>
-<summary><strong>Error Response</strong> Bad Request (400)</summary>
+<summary><strong>错误响应</strong> Bad Request (400)</summary>
 
 ```json
 {
   "time": -1,
   "status": false,
-  "error": "Query is required"
+  "error": "用户名不能为空"
 }
 ```
 </details>
 
-## 🧠 Tech Stack
-- Next.js
+## 🧠 技术栈
+- Next.js 14
 - Shadcn UI & Tailwind CSS
-- Whois Core Lib (@[whois-raw](https://www.npmjs.com/package/whois-raw))
-- RDAP Support (@[node-rdap](https://www.npmjs.com/package/node-rdap))
+- Framer Motion
+- Redis (缓存)
+- 学习通查询 API
 
-## 💪 TLDs Support
-👉 [TLDs Whois Parser Lib Source Code](./src/lib/whois/lib.ts)
+## � 联系方式
+如有问题或建议，欢迎提出 Issue 或 Pull Request。
 
-❤ TIP: The Whois Parser for some TLDs may not be currently compatible, thanks for contributing your [Pull Request](https://github.com/zmh-program/next-whois-ui/pulls) to make this project support more TLDs!
+---
+
+**Powered by Next.js + Shadcn UI** 🚀

@@ -33,11 +33,11 @@
   "data": [
     {
       "id": "518577",
-      "ptname": "图图_学习通（全包）",
-      "school": "自动识别无需填写",
+      "ptname": "xxxxxx",
+      "school": "xxxx",
       "name": "",
       "user": "xxxxx",
-      "kcname": "药理学专业英语",
+      "kcname": "xxxxx",
       "addtime": "2025-11-01 19:46:03",
       "status": "已完成",
       "process": "100%",

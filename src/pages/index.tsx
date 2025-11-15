@@ -358,7 +358,7 @@ export default function Home() {
                                     getTypeColor(item.queryType),
                                   )}
                                 >
-                                  {item.queryType.toUpperCase()}
+                                  {item.queryType === "phone" ? "手机号" : "用户名"}
                                 </Badge>
                               </div>
                               <div className="flex items-center mt-1.5 space-x-3 text-xs text-muted-foreground">

@@ -42,8 +42,13 @@ export function SearchBox({
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [isPhoneNumber, setIsPhoneNumber] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     setHistory(listHistory().slice(0, 10));
@@ -159,13 +164,13 @@ export function SearchBox({
             disabled={loading}
             className="pl-10 pr-4 h-12 text-base"
           />
-          {isPhoneNumber && inputValue && (
+          {mounted && inputValue && (
             <Badge
               variant="secondary"
               className="absolute right-3 top-1/2 -translate-y-1/2"
             >
               <RiUserLine className="w-3 h-3 mr-1" />
-              手机号
+              {isPhoneNumber ? "手机号" : "用户名"}
             </Badge>
           )}
         </div>
